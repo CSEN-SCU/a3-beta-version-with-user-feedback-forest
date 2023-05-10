@@ -14,3 +14,5 @@ To load an unpacked extension in developer mode:
 ![alt text](https://user-images.githubusercontent.com/36625317/233700422-adeff59a-a61c-4835-94ee-aba861cd6d9f.png)
 
 Ta-da! The extension has been successfully installed. Because no extension icons were included in the manifest, a generic icon will be created for the extension.
+
+Kyle's 1st commit for the assignment
