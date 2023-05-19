@@ -81,7 +81,7 @@ function hideSuggestions(element) {
     for (child of element.children) {
         child.style.display = "none";
     }
-
+    
     // Adds the text saying feed hidden
     var message = document.createElement("p");
     message.id = "custom-extension";
