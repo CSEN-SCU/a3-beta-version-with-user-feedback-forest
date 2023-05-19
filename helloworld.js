@@ -14,36 +14,32 @@ XPath
 https://stackoverflow.com/questions/10596417/is-there-a-way-to-get-element-by-xpath-using-javascript-in-selenium-webdriver
 
 */
-
+// chrome.storage.local.set({"local_suggestions": 5 }).then(() => {
+//     console.log("Value is set to " + value);
+// });
+chrome.storage.local.set({'local_suggestions':'5'});
 
 // Hide the main suggestions elelemts container for 3 seconds, then run main
 var delayInMilliseconds = 100;
 var runsLeft = 25;
 const startInterval = setInterval(function() {
     // Temporarily hide entire suggestions element container until fully loaded
-    if (document.getElementById("secondary-inner")) {
-        document.getElementById("secondary-inner").style.display = "none";
-    }
-    /*
-    else if (document.getElementById("related")) { // not working... intent is to hide if in smaller window
-        document.getElementById("related").style.display = "none";
-    }*/
+    var recommendationsContainer = document.querySelectorAll("#related ytd-watch-next-secondary-results-renderer")[0];
+    if (recommendationsContainer)
+        recommendationsContainer.style.display = "none";
+
 
     // Hide the suggestions filtering
-    if (document.getElementsByTagName("yt-related-chip-cloud-renderer")[0]) {
+    if (document.getElementsByTagName("yt-related-chip-cloud-renderer")[0])
         document.getElementsByTagName("yt-related-chip-cloud-renderer")[0].remove();
-    }
 
     runsLeft--; // decrement remaining runs before main runs
 
     // Unhide the suggestions container, and run the main function
     if (runsLeft == 0) {
-        if (document.getElementById("secondary-inner")) {
-            document.getElementById("secondary-inner").style.display = "block";
-        }
-        else if (document.getElementById("related")) {
-            document.getElementById("related").style.display = "block";
-        }
+        if (recommendationsContainer)
+            recommendationsContainer.style.display = "block";
+
         main();
         clearInterval(startInterval)
     }
@@ -53,16 +49,22 @@ const startInterval = setInterval(function() {
 // Hides all the suggestions, then unhides a specified amount after 5 seconds
 function main() {
     // Access an element from a full xpath
-
-
+  
     // Get the container that holds the recommendations
-    var element = getElementByXpath("/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[2]/div/div[3]/ytd-watch-next-secondary-results-renderer/div[2]/ytd-item-section-renderer/div[3]");
-    if (!element) { // If the page loads in a smaller window, with the recommendations below the video, access it with a different xpath
-        element = getElementByXpath("/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[2]/div[9]/ytd-watch-next-secondary-results-renderer/div[2]/ytd-item-section-renderer/div[3]");
+    var element = document.querySelectorAll(".ytd-watch-next-secondary-results-renderer #contents")[0];
+    console.log(element)
+
+    if (!element) {
+        console.log("Failed to find sidebar element")
+        return
     }
-   
+
+    chrome.storage.local.get("local_suggestions").then((result) => {
+        console.log("Value currently is " + result.key);
+    });
 
     // Get the parent of the recommendations box in order to add our custom form on top
+    
     var parent = element.parentElement;
 
     // Hides all suggestion thumbnails

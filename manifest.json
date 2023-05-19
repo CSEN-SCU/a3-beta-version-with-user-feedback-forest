@@ -10,8 +10,7 @@
   "content_scripts": [
     {
       "js": ["helloworld.js"],
-      "matches": ["https://www.youtube.com/*"],
-      "run_at": "document_end"
+      "matches": ["https://www.youtube.com/*"]
     }
   ],
   "background": {
