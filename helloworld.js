@@ -95,13 +95,21 @@ function hideSuggestions(element) {
 
 // Unhide n suggestion thumbnails
 function unhideSuggestions(element, n) {
+
+    // Adds the text saying number of videos displayed
+    var message = document.createElement("p");
+    message.id = "custom-extension-video-count-message";
+    message.textContent = `${n} suggestions are shown`;
+    message.style = "font-size: 30px; color: red; text-align: center;";
+
+    element.parentElement.prepend(message)
     // remove the feed hidden text
     element.parentElement.querySelector("#custom-extension").remove();
 
     // Unhide n thumbnails
     var count = 0;
     for (child of element.children) {
-        if (count <= n) {
+        if (count < n) {
             child.style.display = "block";
             count++;
         }
