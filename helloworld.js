@@ -13,11 +13,23 @@ https://stackoverflow.com/questions/17883692/how-to-set-time-delay-in-javascript
 XPath
 https://stackoverflow.com/questions/10596417/is-there-a-way-to-get-element-by-xpath-using-javascript-in-selenium-webdriver
 
+Wait for you-tube webpage to load entirely before running our script
+https://stackoverflow.com/questions/68405565/where-and-how-can-i-add-a-wait-for-page-to-load-in-my-script
+
 */
 // chrome.storage.local.set({"local_suggestions": 5 }).then(() => {
 //     console.log("Value is set to " + value);
 // });
-chrome.storage.local.set({'local_suggestions':'5'});
+//chrome.storage.local.set({'local_suggestions':'5'});
+
+window.addEventListener('load', (event) => {
+  
+let numVideos;
+chrome.storage.local.get(["numVideos"], function(result) {
+  numVideos = result.numVideos || 5; // default to 5 if numVideos is not set
+  console.log('Number of videos from storage: ', numVideos);
+});
+
 
 // Hide the main suggestions elelemts container for 3 seconds, then run main
 var delayInMilliseconds = 100;
@@ -74,7 +86,7 @@ function main() {
     // Wait 5 seconds, and then unhide them
     var delayInMilliseconds2 = 5000;
     setTimeout(function() {
-        unhideSuggestions(element, 3);
+        unhideSuggestions(element, numVideos);
     }, delayInMilliseconds2);
 }
 
@@ -115,6 +127,7 @@ function unhideSuggestions(element, n) {
         }
     }
 }
+  
 
 // Supporting Function to get elements from their full xpath (https://stackoverflow.com/questions/10596417/is-there-a-way-to-get-element-by-xpath-using-javascript-in-selenium-webdriver)
 function getElementByXpath(path) {
@@ -129,3 +142,7 @@ function once_available(querySelector, callback) {
         }
     }, 100);
 }
+
+
+});
+
