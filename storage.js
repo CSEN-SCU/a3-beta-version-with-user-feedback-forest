@@ -15,3 +15,13 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     window.close();
   });
 });
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    chrome.storage.local.get(["numVideos"], function(result) {
+      console.log('Value currently is ' + result.numVideos);
+      if(result.numVideos) {
+        document.getElementById("displayNumVideos").textContent = "The count set: " + result.numVideos;
+      }
+    });
+});
+
