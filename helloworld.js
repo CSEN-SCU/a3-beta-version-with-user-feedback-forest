@@ -22,7 +22,8 @@ https://stackoverflow.com/questions/68405565/where-and-how-can-i-add-a-wait-for-
 // });
 //chrome.storage.local.set({'local_suggestions':'5'});
 
-    
+window.addEventListener('load', (event) => {
+  
 let numVideos;
 chrome.storage.local.get(["numVideos"], function(result) {
   numVideos = result.numVideos || 5; // default to 5 if numVideos is not set
@@ -141,4 +142,7 @@ function once_available(querySelector, callback) {
         }
     }, 100);
 }
+
+
+});
 
