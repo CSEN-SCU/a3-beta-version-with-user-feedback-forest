@@ -21,7 +21,3 @@ How to use our extension:
 2. To change the number of suggestions you see, click on the icon in the tool bar and submit the form.
 3. If you are submitting the form while on youtube, make sure to refresh the page to update the number of suggestions.
 4. Use the extension to stop falling down the rabbit hole of Youtube. 
-
-
-Kyle's 1st commit for the assignment
-Dhanush 1st commit for the assignment
