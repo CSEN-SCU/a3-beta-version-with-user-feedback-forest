@@ -16,11 +16,11 @@ To load an unpacked extension in developer mode:
 Ta-da! The extension has been successfully installed. Because no extension icons were included in the manifest, a generic icon will be created for the extension.
 
 
-How to use our extension
+How to use our extension:
 1. On Chrome, pin the extension to your tool bar.
 2. To change the number of suggestions you see, click on the icon in the tool bar and submit the form.
 3. If you are submitting the form while on youtube, make sure to refresh the page to update the number of suggestions.
-4. Use the extension to stop falling down the rabbit hold of Youtube. 
+4. Use the extension to stop falling down the rabbit hole of Youtube. 
 
 
 Kyle's 1st commit for the assignment
