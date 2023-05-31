@@ -99,7 +99,7 @@ function hideSuggestions(element) {
     // Adds the text saying feed hidden
     var message = document.createElement("p");
     message.id = "custom-extension";
-    message.textContent = "Feed Hidden";
+    message.textContent = "Content Overload Extension";
     message.style = "font-size: 50px; color: red; text-align: center;";
 
     element.parentElement.appendChild(message);
