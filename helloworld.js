@@ -100,7 +100,7 @@ function hideSuggestions(element) {
     var message = document.createElement("p");
     message.id = "custom-extension";
     message.textContent = "Content Overload Extension";
-    message.style = "font-size: 50px; color: red; text-align: center;";
+    message.style = "font-size: 50px; color: black; text-align: center; font-family: Times New Roman;"
 
     element.parentElement.appendChild(message);
 }
@@ -112,7 +112,7 @@ function unhideSuggestions(element, n) {
     var message = document.createElement("p");
     message.id = "custom-extension-video-count-message";
     message.textContent = `${n} suggestions are shown`;
-    message.style = "font-size: 30px; color: red; text-align: center;";
+    message.style = "font-size: 30px; color: black; text-align: center; font-family: Times New Roman;";
 
     element.parentElement.prepend(message)
     // remove the feed hidden text
