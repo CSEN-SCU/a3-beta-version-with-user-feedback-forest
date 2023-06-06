@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    width: 300px;
+}
+
+#description {
+    margin-bottom: 20px;
+}
+
+#myForm {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    margin-bottom: 20px;
+}

@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions",
+  "name": "Content Overload",
   "description": "COEN 296A A3",
   "version": "1.0",
   "action": {
-    "default_popup": "helloworld.html",
-    "default_icon": "helloworld.png"
+    "default_popup": "form.html",
+    "default_icon": "icon.png"
   },
   "content_scripts": [
     {
@@ -17,4 +17,5 @@
     "service_worker": "background.js"
   },
   "permissions": ["storage", "activeTab", "scripting"]
+
 }
