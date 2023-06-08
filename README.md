@@ -1,4 +1,3 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11116033&assignment_repo_type=AssignmentRepo)
 # chrome-extension
 
 # Disclaimer: This code is not intended to be used as is, but rather modified / referenced for your assignment.
@@ -15,3 +14,10 @@ To load an unpacked extension in developer mode:
 ![alt text](https://user-images.githubusercontent.com/36625317/233700422-adeff59a-a61c-4835-94ee-aba861cd6d9f.png)
 
 Ta-da! The extension has been successfully installed. Because no extension icons were included in the manifest, a generic icon will be created for the extension.
+
+
+How to use our extension:
+1. On Chrome, pin the extension to your tool bar.
+2. To change the number of suggestions you see, click on the icon in the tool bar and submit the form.
+3. If you are submitting the form while on youtube, make sure to refresh the page to update the number of suggestions.
+4. Use the extension to stop falling down the rabbit hole of Youtube. 

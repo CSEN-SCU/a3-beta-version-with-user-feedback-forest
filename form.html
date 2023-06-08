@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div id="description">
+        This extension allows you to control the number of video suggestions you see on YouTube. 
+        Please enter your desired number of video suggestions below:
+    </div>
+    <form id="myForm">
+        <label for="numVideos">Video Count:</label>
+        <input type="number" id="numVideos" name="numVideos" min="1" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="displayNumVideos"></div>
+    <script src="storage.js"></script>
+</body>
+
+</html>
